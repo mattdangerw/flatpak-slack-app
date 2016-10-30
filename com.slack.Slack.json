@@ -15,6 +15,8 @@
         "--share=network",
         /* FIXME: Full filesystem access for DnD. Has to be a better way. */
         "--filesystem=host",
+        /* We need the real tmp from chromiums singleton check. */
+        "--filesystem=/tmp",
         /* Notifications with libnotify */
         "--talk-name=org.freedesktop.Notifications"
     ],
