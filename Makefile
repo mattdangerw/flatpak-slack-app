@@ -1,4 +1,4 @@
-VERSION=2.2.1
+VERSION=2.4.2
 DEBNAME=slack-desktop-$(VERSION)-amd64.deb
 REPO ?= repo
 
