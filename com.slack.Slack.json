@@ -5,8 +5,7 @@
     "runtime-version": "1.4",
     "sdk": "org.freedesktop.Sdk",
     "command": "slack",
-    "rename-desktop-file": "slack.desktop",
-    "rename-icon-file": "slack",
+    "separate-locales": false,
     "finish-args": [
         /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
@@ -19,35 +18,28 @@
         /* We need the real tmp from chromiums singleton check. */
         "--filesystem=/tmp",
         /* Notifications with libnotify */
-        "--talk-name=org.freedesktop.Notifications"
+        "--talk-name=org.freedesktop.Notifications",
+        /* Download the slack debian */
+        "--extra-data=slack.deb:f6c81686eaf4bcc73b0b889d69fa6028efdc86b6a28949594b2f5f0d5a2fc4b1:49071330::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.4.2-amd64.deb"
     ],
-        "build-options" : {
-        "build-args": [
-            "--share=network"
-        ]
-    },
-    "cleanup": ["/share/lintian"],
     "modules": [
         {
             "name": "slack",
             "no-autogen": true,
             "sources" : [
                 {
-                    "type": "archive",
-                    "path": "data.tar.xz"
+                    "type": "file",
+                    "path": "apply_extra"
+                },
+                {
+                    "type": "file",
+                    "path": "slack.sh"
                 },
                 {
                     "type": "file",
                     "path": "slack-Makefile",
                     "dest-filename": "Makefile"
                 }
-            ],
-            "post-install": [
-                "mkdir -p /app/share/icons/hicolor/512x512/apps/",
-                "sed -i 's|Icon=/usr/share/pixmaps/slack.png|Icon=com.slack.Slack|' /app/share/applications/slack.desktop",
-                "sed -i 's|Exec=/usr/bin/slack|Exec=slack|' /app/share/applications/slack.desktop",
-                "echo StartupWMClass=Slack >> /app/share/applications/slack.desktop",
-                "cp /app/share/pixmaps/slack.png /app/share/icons/hicolor/512x512/apps/com.slack.Slack.png"
             ]
         }
     ]
