@@ -2,4 +2,7 @@ all:
 	true
 
 install:
-	cp -ra usr/* /app
+	install apply_extra /app/bin
+	install slack.sh /app/bin/slack
+	cp /usr/bin/ar /app/bin
+	cp /usr/lib/libbfd-*.so /app/lib
