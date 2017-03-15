@@ -7,19 +7,12 @@
     "command": "slack",
     "separate-locales": false,
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
-        /* Sound access */
         "--socket=pulseaudio",
-        /* Network access */
         "--share=network",
-        /* FIXME: Full filesystem access for DnD. Has to be a better way. */
         "--filesystem=host",
-        /* We need the real tmp from chromiums singleton check. */
         "--filesystem=/tmp",
-        /* Notifications with libnotify */
         "--talk-name=org.freedesktop.Notifications",
-        /* Download the slack debian */
         "--extra-data=slack.deb:f6c81686eaf4bcc73b0b889d69fa6028efdc86b6a28949594b2f5f0d5a2fc4b1:49071330::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.4.2-amd64.deb"
     ],
     "modules": [
