@@ -20,7 +20,7 @@
         /* Notifications with libnotify */
         "--talk-name=org.freedesktop.Notifications",
         /* Download the slack debian */
-        "--extra-data=slack.deb:f6c81686eaf4bcc73b0b889d69fa6028efdc86b6a28949594b2f5f0d5a2fc4b1:49071330::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.4.2-amd64.deb"
+        "--extra-data=slack.deb:b176a9d292319a5157af4d1fb84cb07111d04ef517663df1f6dc5a8a8296e855:47812458::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.5.2-amd64.deb"
     ],
     "modules": [
         {
