@@ -1,14 +1,14 @@
-This repo contains a working version of the slack app packaged as a flatpak.
-Unfortunately there is no redistribution rights for the slack binaries, so you
-have to create your own to use it.
+This repo contains a working version of the slack x86-64 app packaged as a flatpak.
 
-The package uses the freedesktop.org runtime, so you first need to install the
-sdk (so you can build the bundled stuff) and the platform:
+The app builds on uses the freedesktop.org runtime and the
+[electron-flatpak-base-app](https://github.com/endlessm/electron-flatpak-base-app).
+You will need both to build the app.
 ```
 flatpak --user remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
-flatpak --user install gnome org.freedesktop.Platform//1.4 org.freedesktop.Sdk//1.4
+flatpak --user install gnome org.freedesktop.Platform/x86_64/1.4 org.freedesktop.Sdk/x86_64/1.4
+flatpak --user remote-add endless-electron-apps --from https://s3-us-west-2.amazonaws.com/electron-flatpak.endlessm.com/endless-electron-apps.flatpakrepo
+flatpak --user install endless-electron-apps io.atom.electron.BaseApp/x86_64/master
 ```
-
 
 To test this, do:
 ```
