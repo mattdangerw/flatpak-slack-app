@@ -13,7 +13,7 @@
         "--filesystem=host",
         "--filesystem=/tmp",
         "--talk-name=org.freedesktop.Notifications",
-        "--extra-data=slack.deb:7ecf34f6c433a186469ce44cf3b9bf2eab334e7437f155211a4188e531e632db:50536970::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.0-amd64.deb"
+        "--extra-data=slack.deb:0f602b50a78c0d16bfd820f6fe28f9692fb2ae6e196c19a8c40053e830d44adf:51194346::https://downloads.slack-edge.com/linux_releases/slack-desktop-2.7.0-amd64.deb"
     ],
     "modules": [
         {
